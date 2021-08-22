@@ -12,6 +12,6 @@ users_list = UsersViewSet.as_view({
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/add/', users_add),
-    path('users/', users_list)
+    path('users/', users_list, name='users-list')
 ]
 
