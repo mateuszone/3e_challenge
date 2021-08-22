@@ -2,8 +2,9 @@
 
 ## Overview
 #### Simple REST API which:
-## - read list of users by list method
-## - create new user in db (single record or multiple object inside list)
+###### - read list of users by list method
+###### - create new user in db (single record or multiple object inside list)
+#### Because purpose of this app is very simple I've used a sqlite db, and uploaded it to github. Db is already filled with some random records. All steps related to the database are proactive, but not necessary to run the application 
 
 ### Technology:
 
@@ -21,7 +22,7 @@
 
 `$ pip install -r requirements.txt`
 
-#### Create db and make some migrations in terminal. If you will not use docker and want to use sqlite3 db just comment out current DATABASE settings with postgre in settings.py and uncomment DATABASE with sqlite3 settings. If you want to use postgres on local server you need to set up database settings in settings.py:
+#### Create db and make some migrations in terminal. 
 
 `python3 manage.py migrate`
 
@@ -29,6 +30,9 @@
 
 `python3 manage.py createsuperuser`
 
+#### Run server:
+
+`python3 manage.py runserver`
 
 ## Run API with Docker
 
@@ -49,29 +53,30 @@
 
 `sudo docker exec -it conteinerid bash`
 
-##### To populate db use:
+##### Now you can use all drf and django commands
+##### For example to populate db use:
 
 `python3 manage.py migrate`
 
-##### If you want to Stop sever:
+##### If you want to Stop sever go back to first terminal, click ctr + d and ctr + c and write:
 
 `$ docker-compose down`
 
 
 ## API url's
 
-#### Show list of available urls
+#### Show list of available urls. By default, django runs at localhost http://127.0.0.1:8000/
 
 ### Users
 
-##### These urls allow everyone to view list of users
+##### This urls allow everyone to view list of users
 
 
 `[GET] /users/`
 
 
 ### Users add
-##### These url allow everyone to create (single or multiple) new user.
+##### This url allow everyone to create (single or multiple) new user.
 
 `[POST] /users/add/`
 

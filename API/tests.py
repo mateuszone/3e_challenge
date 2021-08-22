@@ -6,7 +6,9 @@ from rest_framework import status
 
 
 class UsersViewSetTestCase(APITestCase):
-
+    """
+    Simple tests cases created for testing this simple API.
+    """
     def setUp(self):
         self.user = Users.objects.create(name="Mateusz",
                                          age=27)

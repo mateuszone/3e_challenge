@@ -7,9 +7,11 @@ from API.serializers import UsersSerializer
 
 class UsersViewSet(viewsets.ModelViewSet):
     """
-        This view got 2 custom methods create and list.
-        Create method allows user to create single or multiple objects at the same endpoint.
-        List just shows all users.
+        This view got 2 custom methods:
+        CREATE which is available at /users/add/ url. Create method allows user to create single or multiple objects
+        at the same endpoint.
+        LIST method which allows to view all records from app, available at /users/ url.
+
     """
     queryset = Users.objects.all()
     serializer_class = UsersSerializer
